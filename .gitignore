@@ -1,0 +1,30 @@
+# macOS 系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 本地会话元数据（不属于技能本身）
+.omo/
+*.session.json
+.claude/
+.mcp.json
+
+# 临时文件
+*.tmp
+*.bak
+*.log
+
+# 操作系统
+Thumbs.db
+ehthumbs.db
+Desktop.ini
