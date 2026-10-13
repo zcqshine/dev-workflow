@@ -1,6 +1,6 @@
 # dev-workflow
 
-A disciplined, fully-traced software development pipeline for Claude Code / Claude Agent SDK — from requirements to shipped code, with every artifact on disk and every review handled by an independent sub-agent.
+A disciplined, fully-traced software development pipeline for any skills-compatible coding agent — from requirements to shipped code, with every artifact on disk and every review handled by an independent sub-agent.
 
 > 完整开发流水线技能：需求文档 → 子代理审核 → 修正 → 执行计划 → 子代理审核 → 修正 → 按计划编码 → 子代理 code review → 修改 → 测试，全程落文件到项目 `docs/dev/<任务>/`。
 
@@ -16,11 +16,30 @@ A disciplined, fully-traced software development pipeline for Claude Code / Clau
 
 ## 安装
 
-将本仓库的 `SKILL.md` 和 `references/` 目录放入你的 skills 目录即可。Claude Code 默认扫描以下位置（用户级 + 项目级）：
+本技能遵循 [Agent Skills](https://agentskills.io) 规范，在任何 skills-compatible runtime 中都能用。`SKILL.md` 与 `references/` 必须一起放置——SKILL.md 会在对应阶段按需读取子文件。
+
+### ① 一行命令
+
+克隆进你的 skills 目录（`<SKILLS_DIR>` 换成下表中你的 runtime 对应路径）：
+
+```bash
+git clone https://github.com/zcqshine/dev-workflow.git <SKILLS_DIR>/dev-workflow
+```
+
+### ② 手动放置
+
+| Runtime | 用户级 | 项目级 |
+|---|---|---|
+| Claude Code / Claude Agent SDK | `~/.claude/skills/` | `<项目>/.claude/skills/` |
+| Codex | `~/.codex/skills/` | `<项目>/.codex/skills/` |
+| Cursor | `~/.cursor/skills/` | `<项目>/.cursor/skills/` |
+| 其他 | 见该 runtime 文档的 skills 目录 | 同左 |
+
+放好后重启 agent，技能自动加载。落地结构：
 
 ```
-~/.claude/skills/dev-workflow/
-└── SKILL.md
+<SKILLS_DIR>/dev-workflow/
+├── SKILL.md
 └── references/
     ├── review-prompts.md
     ├── frontend-context.md
@@ -28,13 +47,9 @@ A disciplined, fully-traced software development pipeline for Claude Code / Clau
     └── lessons.md
 ```
 
-或者项目级：
+### ③ 你的 runtime 不支持 skills
 
-```
-<your-project>/.claude/skills/dev-workflow/
-```
-
-重启 Claude Code / Claude Agent SDK 后，技能会自动加载。
+把 `SKILL.md` 直接读进上下文当参考资料用即可；`references/` 下的子文件按 SKILL.md 的指引，到对应阶段再读。
 
 ## 触发条件
 
