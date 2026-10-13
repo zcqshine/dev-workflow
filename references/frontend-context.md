@@ -20,7 +20,7 @@
 ### 2.1 技术栈盘点
 
 - 框架与版本：React、Vue 2、Vue 3、Next、Nuxt、原生等；从 `package.json`、锁文件、`vite.config.*`、`webpack.*`、`nuxt.config.*` 确认。
-- 关键依赖：UI 组件库（Element Plus、Ant Design、Naive UI 等）、CSS 方案（Tailwind、CSS Modules、styled-components、Less 或 Sass）、状态管理、路由、请求库。**确认后必须沿用项目已选的库，不要为省事引入风格不一致的新方案。**
+- 关键依赖：UI 组件库（Element Plus、Ant Design、Naive UI 等）。CSS 方案（Tailwind、CSS Modules、styled-components、Less 或 Sass）。另外盘点状态管理、路由和请求库。**确认后必须沿用项目已选的库，不要为省事引入风格不一致的新方案。**
 - 组件写法：Options API 还是 Composition API、函数组件还是 class、`<script setup>` 等。
 
 ### 2.2 UI 设计风格盘点
