@@ -105,12 +105,14 @@ git clone https://github.com/zcqshine/dev-workflow.git <SKILLS_DIR>/dev-workflow
 
 ```
 dev-workflow/
-├── SKILL.md                      # 技能入口（精简骨架）
+├── SKILL.md                      # 技能入口（精简骨架 + 护栏）
 ├── references/                   # 按需加载子文件
 │   ├── review-prompts.md         # 三类审核的完整子代理 prompt 模板
+│   ├── testing-playbook.md       # §8 测试阶段的判据设计详细清单
 │   ├── frontend-context.md       # 前端架构缓存的建档/刷新清单
 │   ├── backend-context.md        # 后端架构缓存的建档/刷新清单
 │   └── lessons.md                # 教训文档规范与模板
+├── test-prompts.json             # 技能评估用的典型 prompt 集（不参与运行）
 ├── README.md                     # 本文件
 ├── LICENSE                       # MIT 许可证
 └── .gitignore
